@@ -96,6 +96,10 @@ public class BeginOrderAdapter extends RecyclerView.Adapter<BeginOrderAdapter.Vi
                 @Override
                 public void onClick(View view) {
                     createOrder(productData1);
+
+
+
+
                     context.startActivity(new Intent(context, AddOnsActivity.class));
                 }
             });
@@ -105,22 +109,15 @@ public class BeginOrderAdapter extends RecyclerView.Adapter<BeginOrderAdapter.Vi
         if(positionIndex < listProducts.size()) {
             final Product productData2 = listProducts.get(positionIndex);
 
-            //Set burguer name and image or right
             holder.textProduct2.setText(productData2.getName());
             Glide.with(context).load(productData2.getImage()).into(holder.imageProduct2);
             holder.priceProduct2.setText("$" + productData2.getPrice());
 
-
             holder.cardView2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     createOrder(productData2);
-
-                    //Move to next
-                    Intent moveWithData = new Intent(context, AddOnsActivity.class);
-
-                    context.startActivity(moveWithData);
+                    context.startActivity(new Intent(context, AddOnsActivity.class));
                 }
             });
 
@@ -194,8 +191,6 @@ public class BeginOrderAdapter extends RecyclerView.Adapter<BeginOrderAdapter.Vi
 
     @Override
     public int getItemCount() {
-
-
         return (listProducts.size() + 1)/2;
     }
 }

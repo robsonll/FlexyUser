@@ -3,6 +3,7 @@ package com.example.flexyuser;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
@@ -56,6 +57,15 @@ public class AddOnsActivity extends AppCompatActivity {
 
         BusinessController businessController = new BusinessController();
         Business business = businessController.retrieveCurrentBusiness(this);
+
+        getSupportActionBar().setTitle(business.getName());
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        String imageUrl = business.getBusinessConfiguration().getBackgroundImage();
+
+        ImageView imageViewBackground = findViewById(R.id.imageViewBackgroundAddOns);
+        Glide.with(getApplicationContext()).load(imageUrl).into(imageViewBackground);
 
         if (!business.getBusinessConfiguration().getShowDrinks()){
             View viewDrinks = findViewById(R.id.viewDrinks);
@@ -187,10 +197,8 @@ public class AddOnsActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                //Product drink = new Product(document.get("id").toString(),document.get("description").toString(), (Long) document.get("price"));
                                 drinkList.add(document.toObject(Product.class));
                             }
-
 
                             if (drinkList.isEmpty())
                             {
@@ -231,11 +239,7 @@ public class AddOnsActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-
-                                //Add each extra product to list
-                                Product extra = new Product(document.get("id").toString(),document.get("description").toString(), (Long) document.get("price"));
-
-                                extraList.add(extra);
+                                extraList.add(document.toObject(Product.class));
                             }
 
                             if (extraList.isEmpty())
@@ -288,6 +292,16 @@ public class AddOnsActivity extends AppCompatActivity {
                 });
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                startActivity(new Intent(getApplicationContext(),BeginOrder.class));
+                return false;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

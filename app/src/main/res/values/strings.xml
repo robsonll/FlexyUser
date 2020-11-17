@@ -37,6 +37,8 @@
     <string name="payment">Payment</string>
     <string name="continueWithPaypal">Continue With Paypal</string>
     <string name="cod">Pay On Delivery</string>
+    <string name="creditCardPayment">Pay With Credit Card</string>
+    <string name="bitCoinPayment">Pay With Bitcoin</string>
     <string name="orderPlaced">Order Placed</string>
     <string name="call">Call Restaurant</string>
     <string name="goHome">Go Home</string>
