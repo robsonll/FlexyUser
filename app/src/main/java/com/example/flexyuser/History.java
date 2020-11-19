@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -64,12 +65,24 @@ public class History extends Fragment {
 
         completeHistory = viewHistory.findViewById(R.id.completeHistory);
         arrowBtn = viewHistory.findViewById(R.id.arrowBtn);
-        cardView = viewHistory.findViewById(R.id.cardView);
+        //cardView = viewHistory.findViewById(R.id.cardView);
 
+        arrowBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"teste", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+/*
         arrowBtn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
+
+                Toast.makeText(getContext(),"teste", Toast.LENGTH_LONG).show();
+
                 if(completeHistory.getVisibility() == View.GONE){
                     TransitionManager.beginDelayedTransition(cardView, new AutoTransition());
                     completeHistory.setVisibility(View.VISIBLE);
@@ -81,6 +94,7 @@ public class History extends Fragment {
                 }
             }
         });
+*/
 
         //Start HUD
         final KProgressHUD hud = KProgressHUD.create(getContext())

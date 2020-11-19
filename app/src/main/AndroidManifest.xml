@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FlexyUser">
+        <activity android:name=".CreditCardPayment"></activity>
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".AddAddress" />
         <activity android:name=".OrderPlaced" />

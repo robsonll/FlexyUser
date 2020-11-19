@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.flexyuser.ControllerClasses.BusinessController;
 import com.example.flexyuser.ControllerClasses.MessageController;
 import com.example.flexyuser.ModelClasses.Business;
@@ -23,6 +25,11 @@ public class AboutUsActivity extends AppCompatActivity {
 
         BusinessController businessController = new BusinessController();
         Business business = businessController.retrieveCurrentBusiness(AboutUsActivity.this);
+
+        String imageUrl = business.getBusinessConfiguration().getBackgroundImage();
+
+        ImageView imageViewBackground = findViewById(R.id.imageViewBackgroundAboutUs);
+        Glide.with(AboutUsActivity.this).load(imageUrl).into(imageViewBackground);
 
         getSupportActionBar().setTitle(business.getName());
         getSupportActionBar().setHomeButtonEnabled(true);

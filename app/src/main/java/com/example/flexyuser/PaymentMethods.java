@@ -119,12 +119,17 @@ public class PaymentMethods extends AppCompatActivity {
         buttonCOD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //TODO: Go to checkout
-
                 paymentMethod = "COD";
-
                 orderPlaced();
+                //orderControler.placeOrder(getApplicationContext(), paymentMethod);
+            }
+        });
+
+        buttonCreditCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                paymentMethod = "CC";
+                startActivity(new Intent(PaymentMethods.this, CreditCardPayment.class));
             }
         });
 
@@ -185,6 +190,7 @@ public class PaymentMethods extends AppCompatActivity {
 
                     //Update order
                     orderPlaced();
+                    //orderControler.placeOrder(getApplicationContext(), paymentMethod);
 
                 } catch (JSONException e) {
                     Log.e("Payment Stub: ", "An extremely unlikely failure occurred: ", e);

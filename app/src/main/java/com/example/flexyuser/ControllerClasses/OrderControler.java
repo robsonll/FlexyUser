@@ -1,15 +1,26 @@
 package com.example.flexyuser.ControllerClasses;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.flexyuser.ModelClasses.Order;
 import com.example.flexyuser.ModelClasses.OrderItem;
 import com.example.flexyuser.ModelClasses.Product;
+import com.example.flexyuser.OrderPlaced;
+import com.example.flexyuser.PaymentMethods;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -171,6 +182,35 @@ public class OrderControler extends AppCompatActivity {
         }
 
         return strOrderProdutcsDescription;
+
+    }
+
+    public void placeOrder(Context context, String paymentMethod){
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Order order = retrieveCurrentOrder(context);
+
+        order.setPaymentMethod(paymentMethod);
+        order.setDate(new Timestamp(new Date()));
+        order.setStatus("Placed");
+
+        DocumentReference orderRef = db.collection("orders").document(order.getId());
+
+        orderRef
+                .set(order)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("ORDER", "Order successfully placed!");
+                        startActivity(new Intent(context, OrderPlaced.class));
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("ORDER", "Error updating order", e);
+                    }
+                });
 
     }
 
