@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ModelClasses.Order;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,7 +33,7 @@ public class PaymentMethods extends AppCompatActivity {
     String paymentMethod = "";
     BigDecimal orderTotal = BigDecimal.ZERO;
     String strOrderProductsDescription = "";
-    OrderControler orderControler = new OrderControler();
+    OrderController orderController = new OrderController();
     Order order;
 
     private FirebaseFirestore db;
@@ -44,9 +44,9 @@ public class PaymentMethods extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_methods);
 
-        order = orderControler.retrieveCurrentOrder(getApplicationContext());
+        order = orderController.retrieveCurrentOrder(getApplicationContext());
 
-        strOrderProductsDescription = orderControler.getOrderProductsDescriprion(order);
+        strOrderProductsDescription = orderController.getOrderProductsDescriprion(order);
         orderTotal = new BigDecimal(order.getTotalPrice());
 
 
@@ -94,15 +94,15 @@ public class PaymentMethods extends AppCompatActivity {
 
     private void showOrderSummary(){
 
-        OrderControler orderControler = new OrderControler();
-        Order order = orderControler.retrieveCurrentOrder(getApplicationContext());
+        OrderController orderController = new OrderController();
+        Order order = orderController.retrieveCurrentOrder(getApplicationContext());
         String strOrderSummary = "";
 
         strOrderSummary += " <b>*****************************<br> ";
         strOrderSummary += " * Order Summary <br>";
         strOrderSummary += " *****************************</b><br> ";
         strOrderSummary += " <br> ";
-        strOrderSummary += orderControler.getOrderSummary(order);
+        strOrderSummary += orderController.getOrderSummary(order);
 
         TextView txtOrderSummary = findViewById(R.id.textViewOrderSummary);
         txtOrderSummary.setText(Html.fromHtml(strOrderSummary));
@@ -155,7 +155,7 @@ public class PaymentMethods extends AppCompatActivity {
     private void orderPlaced()
     {
         // Getting the updated order info
-        order = orderControler.retrieveCurrentOrder(getApplicationContext());
+        order = orderController.retrieveCurrentOrder(getApplicationContext());
 
         order.setPaymentMethod(paymentMethod);
         order.setDate(new Timestamp(new Date()));

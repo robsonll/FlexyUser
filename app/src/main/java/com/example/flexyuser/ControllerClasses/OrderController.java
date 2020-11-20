@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class OrderControler extends AppCompatActivity {
+public class OrderController extends AppCompatActivity {
 
     public Product getMainProduct(Order order){
 

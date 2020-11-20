@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -15,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.flexyuser.ControllerClasses.BusinessController;
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ControllerClasses.UserController;
 import com.example.flexyuser.ModelClasses.Business;
 import com.example.flexyuser.ModelClasses.Order;
@@ -135,8 +134,8 @@ public class BeginOrderAdapter extends RecyclerView.Adapter<BeginOrderAdapter.Vi
         UserController userController = new UserController();
         User user = userController.retrieveUser(context);
 
-        OrderControler orderControler = new OrderControler();
-        Order order = orderControler.retrieveCurrentOrder(context);
+        OrderController orderController = new OrderController();
+        Order order = orderController.retrieveCurrentOrder(context);
 
         BusinessController businessController = new BusinessController();
         Business business = businessController.retrieveCurrentBusiness(context);
@@ -165,7 +164,7 @@ public class BeginOrderAdapter extends RecyclerView.Adapter<BeginOrderAdapter.Vi
             newOrder.setItems(listItems);
             newOrder.setTotalPrice(orderItem.getItemPrice());
 
-            orderControler.storeOrder(context, newOrder);
+            orderController.storeOrder(context, newOrder);
 
         }else{
 
@@ -182,11 +181,11 @@ public class BeginOrderAdapter extends RecyclerView.Adapter<BeginOrderAdapter.Vi
 
             order.getItems().add(orderItem);
 
-            // orderControler.updateOrderPrice(context, super.);
+            // orderController.updateOrderPrice(context, super.);
 
             order.setTotalPrice(orderItem.getItemPrice());
 
-            orderControler.storeOrder(context, order);
+            orderController.storeOrder(context, order);
 
         }
 

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ControllerClasses.UserController;
 import com.example.flexyuser.ModelClasses.Order;
 import com.example.flexyuser.ModelClasses.OrderItem;
@@ -84,7 +84,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
         final Product burgerData2 = burgerList.get(positionIndex + 1);
 
 
-        //Set burguer name  and image on left
+        //Set burger name  and image on left
         holder.textBurger1.setText(burgerData1.getDescription());
         Glide.with(context).load(burgerData1.getImage()).into(holder.imageBurger1);
         holder.priceBurger1.setText("$" + burgerData1.getPrice());
@@ -102,7 +102,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
             }
         });
 
-        //Set burguer name and image or right
+        //Set burger name and image or right
         holder.textBurger2.setText(burgerData2.getDescription());
         Glide.with(context).load(burgerData2.getImage()).into(holder.imageBurger2);
         holder.priceBurger2.setText("$" + burgerData2.getPrice());
@@ -129,8 +129,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
         UserController userController = new UserController();
         User user = userController.retrieveUser(context);
 
-        OrderControler orderControler = new OrderControler();
-        Order order = orderControler.retrieveCurrentOrder(context);
+        OrderController orderController = new OrderController();
+        Order order = orderController.retrieveCurrentOrder(context);
 
         if(order == null) {
 
@@ -155,7 +155,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
             newOrder.setItems(listItems);
             newOrder.setTotalPrice(orderItem.getItemPrice());
 
-            orderControler.storeOrder(context, newOrder);
+            orderController.storeOrder(context, newOrder);
 
         }else{
 
@@ -172,11 +172,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
 
             order.getItems().add(orderItem);
 
-            // orderControler.updateOrderPrice(context, super.);
+            // orderController.updateOrderPrice(context, super.);
 
             order.setTotalPrice(orderItem.getItemPrice());
 
-            orderControler.storeOrder(context, order);
+            orderController.storeOrder(context, order);
 
         }
 

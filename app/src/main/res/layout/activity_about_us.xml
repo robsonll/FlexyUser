@@ -24,6 +24,7 @@
         android:id="@+id/textViewAboutMsg"
         android:layout_width="300dp"
         android:layout_height="450dp"
+        android:gravity="center"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
