@@ -24,7 +24,8 @@
         android:id="@+id/textViewWelcomeMsg"
         android:layout_width="300dp"
         android:layout_height="250dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -35,11 +36,10 @@
         android:id="@+id/buttonAboutUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="100dp"
         android:text="About Us"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewWelcomeMsg" />
 
@@ -47,13 +47,11 @@
         android:id="@+id/buttonStartOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="22dp"
         android:text="Start Order"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackgroundHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/buttonAboutUs"
-        app:layout_constraintTop_toBottomOf="@+id/textViewWelcomeMsg" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAboutUs" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

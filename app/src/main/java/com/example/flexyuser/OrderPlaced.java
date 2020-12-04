@@ -7,17 +7,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.bumptech.glide.Glide;
-import com.example.flexyuser.ControllerClasses.BusinessController;
-import com.example.flexyuser.ControllerClasses.OrderControler;
-import com.example.flexyuser.ModelClasses.Business;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ModelClasses.Order;
 
 
@@ -32,18 +28,10 @@ public class OrderPlaced extends AppCompatActivity {
         Button buttonGoHome = findViewById(R.id.buttonGoHome);
         TextView textViewOrderID = findViewById(R.id.textViewOrderID);
 
-        BusinessController businessController = new BusinessController();
-        Business business = businessController.retrieveCurrentBusiness(this);
-
-        String imageUrl = business.getBusinessConfiguration().getBackgroundImage();
-
-        ImageView imageViewBackground = findViewById(R.id.imageViewBackgroundOrderPlaced);
-        Glide.with(this).load(imageUrl).into(imageViewBackground);
-
         Bundle bundle = getIntent().getExtras();
 
-        OrderControler orderControler = new OrderControler();
-        Order order = orderControler.retrieveCurrentOrder(getApplicationContext());
+        OrderController orderController = new OrderController();
+        Order order = orderController.retrieveCurrentOrder(getApplicationContext());
 
 
         if (bundle != null)
@@ -65,7 +53,7 @@ public class OrderPlaced extends AppCompatActivity {
 
                 } else {
                     // Permission has already been granted
-                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:7783252701")));
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:7783252700")));
                 }
 
             }

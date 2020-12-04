@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ModelClasses.Order;
 
 import java.text.SimpleDateFormat;
@@ -50,8 +50,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         String strDate = "";
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
 
-        OrderControler orderControler = new OrderControler();
-        strOrderSummary = orderControler.getOrderSummary(orderData);
+        OrderController orderController = new OrderController();
+        strOrderSummary = orderController.getOrderSummary(orderData);
 
         if(orderData.getDate() != null) {
             strDate = dateFormat.format(orderData.getDate().toDate());

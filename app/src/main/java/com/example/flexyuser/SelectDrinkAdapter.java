@@ -8,7 +8,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ModelClasses.Order;
 import com.example.flexyuser.ModelClasses.Product;
 
@@ -65,16 +65,16 @@ public class SelectDrinkAdapter extends BaseAdapter
                 int pos = (int) buttonView.getTag();
                 Long orderPrice;
 
-                OrderControler orderControler = new OrderControler();
+                OrderController orderController = new OrderController();
 
-                Order order = orderControler.retrieveCurrentOrder(parent.getContext());
+                Order order = orderController.retrieveCurrentOrder(parent.getContext());
 
                 if(isChecked)
-                    orderControler.addProductToOrderItem(order, adapterData.get(pos));
+                    orderController.addProductToOrderItem(order, adapterData.get(pos));
                 else
-                    orderControler.removeProductFromOrderItem(order, adapterData.get(pos));
+                    orderController.removeProductFromOrderItem(order, adapterData.get(pos));
 
-                orderPrice = orderControler.updateOrderPrice(parent.getContext(), order);
+                orderPrice = orderController.updateOrderPrice(parent.getContext(), order);
 
                 txtOrderPrice.setText("$" + orderPrice);
 

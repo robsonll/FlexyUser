@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.example.flexyuser.ControllerClasses.BusinessController;
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ControllerClasses.UserController;
 import com.example.flexyuser.ModelClasses.Address;
 import com.example.flexyuser.ModelClasses.Business;
@@ -92,10 +92,10 @@ public class AddOnsActivity extends AppCompatActivity {
         }
 
 
-        final OrderControler orderControler = new OrderControler();
-        final Order order = orderControler.retrieveCurrentOrder(getApplicationContext());
+        final OrderController orderController = new OrderController();
+        final Order order = orderController.retrieveCurrentOrder(getApplicationContext());
 
-        Product mainProduct = orderControler.getMainProduct(order);
+        Product mainProduct = orderController.getMainProduct(order);
 
         burgerPrice = mainProduct.getPrice().toString();
         textViewBurgerName.setText(mainProduct.getName());
@@ -110,10 +110,10 @@ public class AddOnsActivity extends AppCompatActivity {
                 Spinner spinnerAddress = findViewById(R.id.spinnerAddress);
                 Integer itemPosition = spinnerAddress.getSelectedItemPosition();
 
-                Order finalOrder = orderControler.retrieveCurrentOrder(getApplicationContext());
+                Order finalOrder = orderController.retrieveCurrentOrder(getApplicationContext());
 
                 finalOrder.setUserAddress(String.valueOf(itemPosition));
-                orderControler.storeOrder(getApplicationContext(), finalOrder);
+                orderController.storeOrder(getApplicationContext(), finalOrder);
 
                 saveOrder();
 
@@ -147,10 +147,10 @@ public class AddOnsActivity extends AppCompatActivity {
 
         Long orderPrice;
 
-        OrderControler orderControler = new OrderControler();
-        Order order = orderControler.retrieveCurrentOrder(getApplicationContext());
+        OrderController orderController = new OrderController();
+        Order order = orderController.retrieveCurrentOrder(getApplicationContext());
 
-        orderPrice = orderControler.updateOrderPrice(getApplicationContext(), order);
+        orderPrice = orderController.updateOrderPrice(getApplicationContext(), order);
 
         TextView txtOrderPrice = findViewById(R.id.textViewPrice);
 
@@ -268,8 +268,8 @@ public class AddOnsActivity extends AppCompatActivity {
 
     private void saveOrder(){
 
-        final OrderControler orderControler = new OrderControler();
-        final Order order = orderControler.retrieveCurrentOrder(getApplicationContext());
+        final OrderController orderController = new OrderController();
+        final Order order = orderController.retrieveCurrentOrder(getApplicationContext());
 
         db.collection("orders")
                 .add(order)
@@ -280,7 +280,7 @@ public class AddOnsActivity extends AppCompatActivity {
                         documentReference.update("id",documentReference.getId());
                         order.setId(documentReference.getId());
                         order.setStatus("Pending");
-                        orderControler.storeOrder(getApplicationContext(), order);
+                        orderController.storeOrder(getApplicationContext(), order);
 
                     }
                 })
