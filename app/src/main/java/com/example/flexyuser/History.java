@@ -63,16 +63,18 @@ public class History extends Fragment {
 
         final TextView titleTextView = view.findViewById(R.id.textViewTitle);
 
-        completeHistory = viewHistory.findViewById(R.id.completeHistory);
-        arrowBtn = viewHistory.findViewById(R.id.arrowBtn);
+        //completeHistory = viewHistory.findViewById(R.id.completeHistory);
+        //arrowBtn = viewHistory.findViewById(R.id.arrowBtn);
         //cardView = viewHistory.findViewById(R.id.cardView);
 
+/*
         arrowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(),"teste", Toast.LENGTH_LONG).show();
             }
         });
+*/
 
 
 /*

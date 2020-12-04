@@ -154,13 +154,13 @@ public class OrderControler extends AppCompatActivity {
         String strOrderSummary = "";
 
         for(OrderItem orderItem : order.getItems()){
-            strOrderSummary += " <b>Item</b> " + orderItem.getId() + "<br>" ;
+            strOrderSummary += " Item " + orderItem.getId() + "<br>" ;
 
             for(Product product : orderItem.getProducts()){
                 strOrderSummary += "     " + product.getDescription() + " - $" + product.getPrice() + "<br>";
             }
             strOrderSummary += "<br>";
-            strOrderSummary += " <b>Item Total</b> : $" + orderItem.getItemPrice().toString() + "<br>";
+            strOrderSummary += " Item Total : $" + orderItem.getItemPrice().toString() + "<br>";
             strOrderSummary += "<br>";
         }
 
@@ -185,6 +185,7 @@ public class OrderControler extends AppCompatActivity {
 
     }
 
+/*
     public void placeOrder(Context context, String paymentMethod){
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -213,5 +214,6 @@ public class OrderControler extends AppCompatActivity {
                 });
 
     }
+*/
 
 }
