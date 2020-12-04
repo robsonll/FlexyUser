@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.flexyuser.ControllerClasses.BusinessController;
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ModelClasses.Business;
 import com.example.flexyuser.ModelClasses.Order;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -80,7 +80,7 @@ public class CreditCardPayment extends AppCompatActivity {
         // Getting the updated order info
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        OrderControler orderControler = new OrderControler();
+        OrderController orderControler = new OrderController();
         Order order = orderControler.retrieveCurrentOrder(getApplicationContext());
 
         order.setPaymentMethod("CC");

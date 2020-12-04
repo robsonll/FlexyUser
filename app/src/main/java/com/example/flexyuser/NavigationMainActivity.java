@@ -17,7 +17,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.flexyuser.ControllerClasses.BusinessController;
-import com.example.flexyuser.ControllerClasses.OrderControler;
+import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ControllerClasses.UserController;
 import com.example.flexyuser.ModelClasses.Business;
 import com.example.flexyuser.ModelClasses.User;
@@ -105,7 +105,7 @@ public class NavigationMainActivity extends AppCompatActivity implements Navigat
         // Build a GoogleSignInClient with the options specified by gso.
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        OrderControler orderControler = new OrderControler();
+        OrderController orderControler = new OrderController();
         orderControler.cleanOrder(getApplicationContext());
 
     }
