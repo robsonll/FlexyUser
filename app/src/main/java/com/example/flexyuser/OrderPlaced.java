@@ -15,9 +15,13 @@ import androidx.core.content.ContextCompat;
 
 import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ModelClasses.Order;
+import com.example.flexyuser.ModelClasses.Message;
+import com.example.flexyuser.ControllerClasses.MessageController;
 
 
 public class OrderPlaced extends AppCompatActivity {
+
+    TextView txtViewCheckoutMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +32,26 @@ public class OrderPlaced extends AppCompatActivity {
         Button buttonGoHome = findViewById(R.id.buttonGoHome);
         TextView textViewOrderID = findViewById(R.id.textViewOrderID);
 
-        Bundle bundle = getIntent().getExtras();
-
         OrderController orderController = new OrderController();
         Order order = orderController.retrieveCurrentOrder(getApplicationContext());
 
+        Bundle bundle = getIntent().getExtras();
 
-        if (bundle != null)
+        if (order.getId() != null)
         {
             textViewOrderID.setText(order.getId());
         }
+
+//        if (bundle != null)
+//        {
+//            textViewOrderID.setText(order.getId());
+//        }
+
+        txtViewCheckoutMsg = findViewById(R.id.txtViewCheckoutMsg);
+        MessageController messageController = new MessageController();
+        String msgCheckout = messageController.retrieveMessageType(OrderPlaced.this, "msgCheckout");
+        txtViewCheckoutMsg.setText( msgCheckout );
+
 
         buttonCall.setOnClickListener(new View.OnClickListener() {
             @Override

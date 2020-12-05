@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.flexyuser.ControllerClasses.BusinessController;
 import com.example.flexyuser.ControllerClasses.UserController;
+import com.example.flexyuser.ModelClasses.Business;
 import com.example.flexyuser.ModelClasses.Order;
 import com.example.flexyuser.ModelClasses.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -62,6 +66,19 @@ public class History extends Fragment {
         SharedPreferences.Editor editor = pref.edit();
 
         final TextView titleTextView = view.findViewById(R.id.textViewTitle);
+
+
+        BusinessController businessController = new BusinessController();
+        Business business = businessController.retrieveCurrentBusiness(getContext());
+
+        //Custom background image
+        String imageUrl = business.getBusinessConfiguration().getBackgroundImage();
+        ImageView imageViewBackground = view.findViewById(R.id.imageViewBackground);
+        Glide.with(getContext()).load(imageUrl).into(imageViewBackground);
+
+
+
+
 
         //completeHistory = viewHistory.findViewById(R.id.completeHistory);
         //arrowBtn = viewHistory.findViewById(R.id.arrowBtn);

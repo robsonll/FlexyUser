@@ -26,6 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@color/colorPrimaryDark"
+        android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="@string/selectAddress"
         android:textColor="@color/common_google_signin_btn_text_dark_default"

@@ -40,7 +40,7 @@
     <string name="creditCardPayment">Pay With Credit Card</string>
     <string name="bitCoinPayment">Pay With Bitcoin</string>
     <string name="orderPlaced">Order Placed</string>
-    <string name="call">Call Restaurant</string>
+    <string name="call">Call Business Place</string>
     <string name="goHome">Go Home</string>
     <string name="addAddress">Add Address</string>
     <string name="addressTItle">Address Title</string>
@@ -64,6 +64,7 @@
     <string name="hintCCCVV">cvv</string>
     <string name="flexyName">Flexy</string>
     <string name="copyright">copyright</string>
+    <string name="thankyou">Thank you message</string>
 
 
 </resources>

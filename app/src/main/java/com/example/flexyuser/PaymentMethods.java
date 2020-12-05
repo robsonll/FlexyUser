@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.flexyuser.ControllerClasses.OrderController;
 import com.example.flexyuser.ModelClasses.Order;
+import com.example.flexyuser.ModelClasses.PaymentMethod;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.Timestamp;
@@ -169,8 +170,8 @@ public class PaymentMethods extends AppCompatActivity {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Log.d("ORDER", "Order successfully placed!");
+                    startActivity(new Intent( PaymentMethods.this, OrderPlaced.class ));
 
-                    startActivity(new Intent(PaymentMethods.this, OrderPlaced.class));
                 }
             })
             .addOnFailureListener(new OnFailureListener() {
