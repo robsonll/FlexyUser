@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:fontFamily="@font/montserrat"
                 android:text="Messages"
                 android:textSize="24dp"
                 android:textStyle="bold"
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:fontFamily="@font/montserrat"
                 android:text="Welcome Message"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:fontFamily="@font/montserrat"
                 android:text="About us Message"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -116,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:fontFamily="@font/montserrat"
                 android:text="Products Screen Message"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -147,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:fontFamily="@font/montserrat"
                 android:text="Check out Message"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -178,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:fontFamily="@font/montserrat"
                 android:text="Payment Methods"
                 android:textSize="24dp"
                 android:textStyle="bold"
@@ -223,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:fontFamily="@font/montserrat"
                 android:text="Background Image"
                 android:textSize="24dp"
                 android:textStyle="bold"
@@ -248,14 +248,14 @@
 
             <Button
                 android:id="@+id/btnChooseBgImage"
-                android:text="Choose Image"
-                android:layout_weight="1"
-                android:layout_width="150dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat"
+                android:text="Choose Image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dividerBackgroundImage"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/dividerBackgroundImage" />
 
             <ImageView
                 android:id="@+id/imgViewBgImage"
@@ -270,10 +270,11 @@
                 android:id="@+id/buttonSaveBusinessConfig"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/btnSave"
-                app:layout_constraintTop_toBottomOf="@+id/imgViewBgImage"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgViewBgImage" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

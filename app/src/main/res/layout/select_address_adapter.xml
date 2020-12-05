@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:background="#59FFFFFF">
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/addressTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:fontFamily="@font/alegreya_sans_sc_medium"
+        android:fontFamily="@font/montserrat"
         android:text="Home"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,42 +23,27 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:fontFamily="@font/alegreya_sans_sc_medium"
-        android:textSize="20sp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addressTitle"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/addressFull" />
 
     <TextView
         android:id="@+id/addressFull"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:fontFamily="@font/alegreya_sans_sc_medium"
+        android:fontFamily="@font/montserrat"
         android:lineSpacingExtra="0sp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/addressTitle"
-        app:layout_constraintTop_toBottomOf="@+id/addressNumber" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="1dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/common_google_signin_btn_text_light_default"
-        app:layout_constraintEnd_toStartOf="@+id/addressNumber"
-        app:layout_constraintStart_toStartOf="@+id/addressTitle"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

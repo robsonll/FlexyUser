@@ -79,9 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
-                android:layout_marginLeft="18dp"
                 android:layout_marginTop="17dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:fontFamily="@font/montserrat"
                 android:text="Burger Name"
                 android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/imageViewBurger"
@@ -92,11 +91,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/alegreya_sans_sc_medium"
                 android:text="$12"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/imageViewBurger"
                 app:layout_constraintTop_toBottomOf="@+id/textViewName" />
 
@@ -120,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium_italic"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/selectDrink"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -169,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium_italic"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/selectExtras"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -221,7 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/alegreya_sans_sc_medium_italic"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/selectAddress"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -262,6 +260,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/otherItem"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewAddress" />
@@ -271,10 +270,10 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/proceedToPay"
                 app:layout_constraintStart_toEndOf="@+id/buttonAddOtherItem"
-                app:layout_constraintTop_toBottomOf="@+id/viewAddress"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/viewAddress" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

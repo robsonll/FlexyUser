@@ -41,10 +41,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:hint="@string/hintCardNumber"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
@@ -52,12 +53,13 @@
         android:id="@+id/editTextExpMonth"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:hint="@string/hintCCMonth"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCardNumber" />
 
@@ -65,12 +67,13 @@
         android:id="@+id/editTextExpYear"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:hint="@string/hintCCYear"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/editTextExpMonth"
         app:layout_constraintTop_toBottomOf="@+id/editTextCardNumber" />
 
@@ -78,34 +81,36 @@
         android:id="@+id/editTextCVV"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginEnd="56dp"
         android:ems="10"
+        android:fontFamily="sans-serif-light"
         android:hint="@string/hintCCCVV"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.316"
-        app:layout_constraintStart_toEndOf="@+id/editTextExpYear"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCardNumber" />
+        tools:layout_editor_absoluteY="197dp" />
 
     <Button
         android:id="@+id/buttonCCPaymentProceed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginBottom="280dp"
+        android:fontFamily="@font/montserrat"
         android:text="Proceed"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextExpMonth" />
+        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonCCPaymentCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="280dp"
+        android:fontFamily="@font/montserrat"
         android:text="Cancel"
-        app:layout_constraintStart_toEndOf="@+id/buttonCCPaymentProceed"
-        app:layout_constraintTop_toBottomOf="@+id/editTextExpMonth" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/buttonCCPaymentProceed" />
 </androidx.constraintlayout.widget.ConstraintLayout>

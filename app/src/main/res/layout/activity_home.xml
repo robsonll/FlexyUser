@@ -25,8 +25,10 @@
         android:layout_width="300dp"
         android:layout_height="250dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +36,10 @@
 
     <Button
         android:id="@+id/buttonAboutUs"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:fontFamily="@font/montserrat"
         android:text="About Us"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -45,13 +48,16 @@
 
     <Button
         android:id="@+id/buttonStartOrder"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat"
         android:text="Start Order"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBackgroundHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAboutUs" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAboutUs"
+        app:layout_constraintVertical_bias="0.26" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
